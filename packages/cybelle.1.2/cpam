@@ -1,0 +1,8 @@
+cpam-version: "1" 
+maintainer: "thomas.braibant@gmail.com"
+build: [
+  ["./congigure.sh"]
+  [make]
+  [make "install"]
+]
+available: [(ocaml-version = "8.4.pl2") | (ocaml-version = "8.4.dev")]
