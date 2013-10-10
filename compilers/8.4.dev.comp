@@ -1,0 +1,15 @@
+cpam-version: "1"
+version: "8.4.dev"
+src: "http://github.com/coq/coq/tarball/v8.4"
+patches: ["http://gallium.inria.fr/~braibant/coq-8.4.pl2.configure.patch"]
+build: [
+  [ "./configure" 
+     "--local" 
+     "--usecamlp5"
+     "--coqide" "no"
+     "-opt"
+  ]
+  [ "make" "-j4" "world"]
+]
+env:[ [COQBIN = "%{bin}%/"] ]
+

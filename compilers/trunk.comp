@@ -1,0 +1,13 @@
+cpam-version: "1"
+version: "trunk"
+src: "http://github.com/coq/coq/tarball/trunk"
+build: [
+  ["./configure" "-prefix" "%{prefix}%" "-opt" "-coqide" "no"  "--usecamlp5"  "--camlp5dir" "/home/braibant/.opam/4.00.1/lib/camlp5" ]
+  ["%{make}%" "-j4" "world"]
+  ["%{make}%" "install"]
+]
+env: [
+  [COQBIN = "%{bin}%/"]
+  [COQLIB = "%{lib}%/coq/"]
+  [COQPATH = "%{lib}%/"]  
+]

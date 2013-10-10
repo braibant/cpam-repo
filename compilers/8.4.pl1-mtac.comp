@@ -1,0 +1,15 @@
+cpam-version: "1"
+version: "8.4.pl2"
+src: "http://coq.inria.fr/distrib/V8.4pl1/files/coq-8.4pl1.tar.gz"
+patches:
+[ "http://gallium.inria.fr/~braibant/mtac-1.1.patch"]
+build: [
+  [ "./configure" 
+     "--local" 
+     "--coqide" "no"
+     "-opt"
+  ]
+  [ "make" "-j4" "world"]
+]
+env:[ [COQBIN = "%{bin}%/"] ]
+
